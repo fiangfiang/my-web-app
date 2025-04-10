@@ -5,7 +5,8 @@ const ASSETS = [
   '/index.html',
   '/styles/style.css',
   '/src/main.js',
-  '/icon-192.png'
+  '/icon-192.png',
+  '/favicon.ico'
 ];
 
 self.addEventListener('install', (e) => {
