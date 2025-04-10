@@ -7,13 +7,18 @@
   
   .todo-item {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 12px;
     margin-bottom: 8px;
     background: #f8f9fa;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .todo-item span {
+    flex-grow: 1;
+    margin-right: 10px;
   }
   
   .delete-btn {
@@ -25,4 +30,16 @@
   
   .delete-btn:hover {
     opacity: 0.8;
+  }
+
+  /* 复选框样式 */
+  .todo-item input[type="checkbox"] {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  /* 已完成项目的文本样式 */
+  .completed {
+    text-decoration: line-through;
+    color: #6c757d;
   }
