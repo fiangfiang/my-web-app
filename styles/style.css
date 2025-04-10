@@ -1,0 +1,28 @@
+/* 新增列表项样式 */
+#todoList {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  .todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 8px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .delete-btn {
+    background: #dc3545 !important;
+    padding: 6px 12px;
+    border-radius: 3px;
+    transition: opacity 0.2s;
+  }
+  
+  .delete-btn:hover {
+    opacity: 0.8;
+  }

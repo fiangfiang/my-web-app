@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- PWA 必要标签 -->
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0984e3">
+
+<!-- iOS 额外配置 -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon" href="/icon-192.png">
+  <meta charset="UTF-8">
+  <title>简易待办事项</title>
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>我的待办事项 📝</h1>
+    <div class="input-group">
+      <input type="text" id="todoInput" placeholder="输入新任务...">
+      <button onclick="addTodo()">添加</button>
+    </div>
+    <ul id="todoList"></ul>
+  </div>
+  <script src="./src/main.js"></script>
+</body>
+</html>
+
+<!-- 注册代码 -->
+<script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js');
+      });
+    }
+  </script>
