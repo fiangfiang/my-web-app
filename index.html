@@ -29,9 +29,31 @@
 
 <!-- 注册代码 -->
 <script>
+    // 在原有脚本前添加
+    const currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+  if (!currentUser) {
+    window.location.href = 'login.html';
+  }
+
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js');
       });
     }
   </script>
+
+  <!-- 在原有HTML中添加 -->
+<div class="user-info">
+  欢迎，<span id="username"></span> | <a href="#" onclick="logout()">退出</a>
+</div>
+
+<script>
+  // 显示用户名
+  document.getElementById('username').textContent = currentUser.username;
+
+  // 退出功能
+  function logout() {
+    sessionStorage.removeItem('currentUser');
+    window.location.href = 'login.html';
+  }
+</script>
